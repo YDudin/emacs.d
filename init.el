@@ -5,16 +5,33 @@
 
 (require 'expand-region)
 (require 'neotree)
+(require 'mark-more-like-this)
+
+;;syntax check for ruby
+(require 'flymake-ruby)
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
 
 ;;(defvar my-map (make-keymap) "my prog keys")
 
 (when (window-system)
-  (tool-bar-mode -1)) 
+  (tool-bar-mode -1))
+
+;; mark-multiple shortcuts
+(require 'mark-more-like-this)
+(global-set-key (kbd "C-<") 'mark-previous-like-this)
+(global-set-key (kbd "C->") 'mark-next-like-this)
+(global-set-key (kbd "C-*") 'mark-all-like-this)
+
+;; multiple cursors shortcut
+(global-set-key (kbd "C-c m") 'mc/mark-all-like-this)
 
 ;; expand region
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-`") 'browse-kill-ring)
 (global-set-key [f12] 'neotree-toggle)
+
+;; Ruby shell
+(global-set-key (kbd "C-c r r") 'inf-ruby)
 
 ;;(set-frame-font "Source Code Pro for Powerline-14")
 (set-face-attribute 'default nil :height 140)
@@ -98,7 +115,7 @@ there's a region, all lines that region covers will be duplicated."
         (insert region)
         (setq end (point)))
       (goto-char (+ origin (* (length region) arg) arg)))))
-(global-set-key (kbd "M-S-d") 'duplicate-current-line-or-region)
+(global-set-key (kbd "M-s-d") 'duplicate-current-line-or-region)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
