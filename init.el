@@ -30,6 +30,13 @@
 (global-set-key (kbd "C-`") 'browse-kill-ring)
 (global-set-key [f12] 'neotree-toggle)
 
+;; highlight-symbol
+(require 'highlight-symbol)
+(global-set-key (kbd "C-c s") 'highlight-symbol)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+
 ;; Ruby shell
 (global-set-key (kbd "C-c r r") 'inf-ruby)
 
