@@ -2,6 +2,8 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa"."http://melpa.milkbox.net/packages/") t)
 (add-to-list 'load-path "~/Emacs/neotree")
+(add-to-list 'load-path "~/.emacs.d/libraries")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (require 'expand-region)
 (require 'neotree)
@@ -129,12 +131,14 @@ there's a region, all lines that region covers will be duplicated."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
- '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
+ '(custom-enabled-themes (quote (solarized-light)))
  '(custom-safe-themes
    (quote
-    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default))))
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
